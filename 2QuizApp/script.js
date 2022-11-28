@@ -1,5 +1,6 @@
 // Variables
-const aText = document.getElementById("a_text"),
+const quiz = document.getElementById('quiz')
+  aText = document.getElementById("a_text"),
   bText = document.getElementById("b_text"),
   cText = document.getElementById("c_text"),
   dText = document.getElementById("d_text"),
@@ -54,22 +55,29 @@ const quizData = [
 // App
 
 let currentQuiz = 0;
+
+
+const deSelectAnswers = () => {  
+  answers.forEach((el) => {
+    el.checked = false
+  })
+};
+
 const loadQuiz = () => {
+  deSelectAnswers()
   const currentQuizData = quizData[currentQuiz];
   questionEl.innerHTML = currentQuizData.question;
   aText.innerText = currentQuizData.a;
   bText.innerText = currentQuizData.b;
   cText.innerText = currentQuizData.c;
   dText.innerText = currentQuizData.d;
-  // currentQuiz+=1
-  console.log(currentQuiz);
 };
 
 loadQuiz();
 
 const getSelected = () => {
-  let answer = undefined
-    answers.forEach((el) => {
+  let answer = undefined;
+  answers.forEach((el) => {
     
     if (el.checked) {
       answer = el.id;
@@ -78,15 +86,16 @@ const getSelected = () => {
   return answer;
 };
 
-let score = 0;
 
-  mm 
+
+let score = 0;
+ 
 
 submitBtn.addEventListener("click", () => {
   const answer = getSelected();
   console.log(answer);
   if (answer) {
-    if (answer === quizData[currentQuiz].correct ){
+    if (answer === quizData[currentQuiz].correct){
         score++
     }
     currentQuiz += 1;
@@ -94,9 +103,10 @@ submitBtn.addEventListener("click", () => {
     if (currentQuiz < quizData.length) {
         loadQuiz();
     } else {
-        alert("Siz testni yakunladingiz 👍😎", score);
+      quiz.innerHTML = `<h2>Siz ${quizData.length} ta savoldan ${score} ball to'pladingiz </h2> 
+      <button onclick="location.reload()">Qayta Ishlash</button>`
     }
 
-
 }
+
 });

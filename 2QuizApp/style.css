@@ -19,7 +19,7 @@ body{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    min-height: 300px;
+    /* min-height: 300px; */
     max-height: max-content;
     width: 500px;
     background-color: #F5F5F5;
@@ -28,8 +28,9 @@ body{
 .quiz-header, .quiz-container ul{
     padding: 20px;
 }
-.quiz-header{
+.quiz-header , h2{
     font-size: 2rem;
+    padding: 1rem;
 }
 .quiz-container ul li{
     margin: 1rem 0;
@@ -55,10 +56,15 @@ ul li label {
     padding: 2rem;
     font-family: inherit;
     font-size: 1.5rem;
+    outline: none;
+    border: none;
 }
 button:hover {
-    background-color: #732d91;
-    
+    background-color: #732d91;    
+}
+button::fokus {
+    background-color: #5e3370;    
+    outline: none;
 }
 
 
