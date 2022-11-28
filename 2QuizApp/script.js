@@ -11,11 +11,11 @@ const quiz = document.getElementById('quiz')
 // Questions
 const quizData = [
   {
-    question: "O'zbekiston Respublikasi mustaqillik kuni - ",
-    a: "30-avgust",
-    b: "31-avgust",
-    c: "1-sentabr",
-    d: "2-sentabr",
+    question: "My birthday - ",
+    a: "27-December",
+    b: "17-December",
+    c: "17-January",
+    d: "27-January",
     correct: "c",
   },
   {
@@ -53,10 +53,7 @@ const quizData = [
 ];
 
 // App
-
 let currentQuiz = 0;
-
-
 const deSelectAnswers = () => {  
   answers.forEach((el) => {
     el.checked = false

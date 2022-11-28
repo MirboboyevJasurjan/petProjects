@@ -52,7 +52,7 @@ ul li label {
     width: 100%;
     margin: 0;
     color: #FFF;
-    background-color: #8e44ad;
+    background-color: #001aff;
     padding: 2rem;
     font-family: inherit;
     font-size: 1.5rem;
@@ -60,10 +60,10 @@ ul li label {
     border: none;
 }
 button:hover {
-    background-color: #732d91;    
+    background-color: #1e31d4;    
 }
-button::fokus {
-    background-color: #5e3370;    
+button:focus {
+    background-color: #4b5cf8;    
     outline: none;
 }
 
